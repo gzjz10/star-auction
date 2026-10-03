@@ -53,7 +53,7 @@ export function ResultsScreen({ game, onMatch, onReplay, onRematch, onMenu }: Pr
           <>
             <Crest crest={game.teams[winner].crest} team={winner} size={96} />
             <h1 className="results__winner">
-              <FitText className={`display worn ${winner === 0 ? 'ink-red offreg-blue' : 'ink-blue offreg-red'}`} min={44} max={240}>
+              <FitText className={`display ${winner === 0 ? 'ink-red' : 'ink-blue'}`} min={44} max={240}>
                 {game.teams[winner].name}
               </FitText>
             </h1>
@@ -62,7 +62,7 @@ export function ResultsScreen({ game, onMatch, onReplay, onRematch, onMenu }: Pr
             </p>
           </>
         ) : (
-          <h1 className="results__winner display worn">{t('draw')}</h1>
+          <h1 className="results__winner display">{t('draw')}</h1>
         )}
       </section>
 

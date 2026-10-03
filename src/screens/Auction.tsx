@@ -158,7 +158,7 @@ function LotPoster({ game }: { game: GameState }) {
   return (
     <article className="lot" aria-labelledby="lot-name" aria-describedby="lot-meta">
       <h2 id="lot-name" className="lot__name">
-        <FitText className="display worn offreg-blue" min={34} max={96}>
+        <FitText className="display" min={30} max={96}>
           {name}
         </FitText>
       </h2>
@@ -260,7 +260,7 @@ function BidBand({ game, clock }: { game: GameState; clock: number | null }) {
             {fmtMoney(prev.amount)}
           </span>
         )}
-        <span key={game.seq} className="bid__amount display num worn" aria-live="polite">
+        <span key={game.seq} className="bid__amount display num" aria-live="polite">
           {holder !== null ? fmtMoney(bid.amount) : fmtMoney(game.lot.opening)}
         </span>
       </div>
