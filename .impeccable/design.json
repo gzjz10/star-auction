@@ -1,0 +1,644 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-03T02:05:14.756Z",
+  "title": "Design System: Star Auction",
+  "extensions": {
+    "colorMeta": {
+      "stock": {
+        "role": "neutral",
+        "displayName": "Poster Stock",
+        "canonical": "oklch(91.8% 0.038 86.9)",
+        "tonalRamp": [
+          "#100a02",
+          "#2b2415",
+          "#49412e",
+          "#6a604a",
+          "#8c816a",
+          "#aea48f",
+          "#d1c8b5",
+          "#f6eedd"
+        ]
+      },
+      "stock-2": {
+        "role": "neutral",
+        "displayName": "Linen Tan",
+        "canonical": "oklch(88.0% 0.048 87.0)",
+        "tonalRamp": [
+          "#110a00",
+          "#2d2410",
+          "#4b4128",
+          "#6c6043",
+          "#8e8163",
+          "#b0a489",
+          "#d3c8af",
+          "#f7eed8"
+        ]
+      },
+      "stock-3": {
+        "role": "neutral",
+        "displayName": "Deep Linen",
+        "canonical": "oklch(83.5% 0.057 86.6)",
+        "tonalRamp": [
+          "#120a00",
+          "#2e240a",
+          "#4d4023",
+          "#6f5f3d",
+          "#91815d",
+          "#b2a483",
+          "#d5c8ab",
+          "#f9edd3"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Wood Ink",
+        "canonical": "oklch(19.7% 0.007 78.2)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#262522",
+          "#44423f",
+          "#63615d",
+          "#84827e",
+          "#a7a5a1",
+          "#cbc9c6",
+          "#f0eeeb"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Pressed Gray",
+        "canonical": "oklch(39.0% 0.017 78.1)",
+        "tonalRamp": [
+          "#0e0b06",
+          "#28241e",
+          "#46413a",
+          "#666057",
+          "#888178",
+          "#aaa49b",
+          "#cec8c0",
+          "#f2eee7"
+        ]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Dry Gray",
+        "canonical": "oklch(50.3% 0.024 81.7)",
+        "tonalRamp": [
+          "#0e0b05",
+          "#29241b",
+          "#474136",
+          "#686053",
+          "#898173",
+          "#aba497",
+          "#cfc8bd",
+          "#f4eee3"
+        ]
+      },
+      "red": {
+        "role": "primary",
+        "displayName": "Barn Red",
+        "canonical": "oklch(50.1% 0.178 28.7)",
+        "tonalRamp": [
+          "#2c0000",
+          "#540000",
+          "#7f0605",
+          "#ad2921",
+          "#d55043",
+          "#f57c6d",
+          "#ffa797",
+          "#ffd1c3"
+        ]
+      },
+      "blue": {
+        "role": "secondary",
+        "displayName": "Deep Blue",
+        "canonical": "oklch(36.3% 0.102 262.5)",
+        "tonalRamp": [
+          "#010826",
+          "#102349",
+          "#284070",
+          "#436098",
+          "#6382bd",
+          "#88a5dc",
+          "#afcafc",
+          "#d7efff"
+        ]
+      },
+      "on-red": {
+        "role": "neutral",
+        "displayName": "Cream Knockout",
+        "canonical": "oklch(95.1% 0.027 85.7)",
+        "tonalRamp": [
+          "#0e0b04",
+          "#29241a",
+          "#474134",
+          "#686051",
+          "#898271",
+          "#aba495",
+          "#cfc8bb",
+          "#f4eee2"
+        ]
+      },
+      "on-blue": {
+        "role": "neutral",
+        "displayName": "Cream Knockout",
+        "canonical": "oklch(95.1% 0.027 85.7)",
+        "tonalRamp": [
+          "#0e0b04",
+          "#29241a",
+          "#474134",
+          "#686051",
+          "#898271",
+          "#aba495",
+          "#cfc8bb",
+          "#f4eee2"
+        ]
+      },
+      "on-ink": {
+        "role": "neutral",
+        "displayName": "Stock Knockout",
+        "canonical": "oklch(91.8% 0.038 86.9)",
+        "tonalRamp": [
+          "#100a02",
+          "#2b2415",
+          "#49412e",
+          "#6a604a",
+          "#8c816a",
+          "#aea48f",
+          "#d1c8b5",
+          "#f6eedd"
+        ]
+      },
+      "ghost": {
+        "role": "neutral",
+        "displayName": "Ghost Impression",
+        "canonical": "rgb(23 21 18 / 0.16)"
+      },
+      "night-stock": {
+        "role": "neutral",
+        "displayName": "Black Stock",
+        "canonical": "oklch(18.4% 0.009 75.0)",
+        "tonalRamp": [
+          "#0d0b08",
+          "#272521",
+          "#44413d",
+          "#64615c",
+          "#85827d",
+          "#a8a4a0",
+          "#ccc8c4",
+          "#f1eeea"
+        ]
+      },
+      "night-stock-2": {
+        "role": "neutral",
+        "displayName": "Black Stock Band",
+        "canonical": "oklch(22.5% 0.013 78.0)",
+        "tonalRamp": [
+          "#0d0b08",
+          "#282520",
+          "#45413c",
+          "#65605a",
+          "#86827a",
+          "#a9a49e",
+          "#cdc8c2",
+          "#f1eee8"
+        ]
+      },
+      "night-stock-3": {
+        "role": "neutral",
+        "displayName": "Black Stock Well",
+        "canonical": "oklch(27.1% 0.016 79.5)",
+        "tonalRamp": [
+          "#0d0b07",
+          "#28241f",
+          "#46413a",
+          "#666058",
+          "#878178",
+          "#aaa49c",
+          "#cdc8c1",
+          "#f2eee7"
+        ]
+      },
+      "night-ink": {
+        "role": "neutral",
+        "displayName": "Cream Ink",
+        "canonical": "oklch(91.8% 0.038 86.9)",
+        "tonalRamp": [
+          "#100a02",
+          "#2b2415",
+          "#49412e",
+          "#6a604a",
+          "#8c816a",
+          "#aea48f",
+          "#d1c8b5",
+          "#f6eedd"
+        ]
+      },
+      "night-ink-2": {
+        "role": "neutral",
+        "displayName": "Night Pressed Gray",
+        "canonical": "oklch(78.6% 0.037 85.4)",
+        "tonalRamp": [
+          "#100a02",
+          "#2b2415",
+          "#4a412f",
+          "#6a604b",
+          "#8c816b",
+          "#aea48f",
+          "#d1c8b6",
+          "#f6eedd"
+        ]
+      },
+      "night-ink-3": {
+        "role": "neutral",
+        "displayName": "Night Dry Gray",
+        "canonical": "oklch(66.4% 0.033 83.6)",
+        "tonalRamp": [
+          "#0f0a03",
+          "#2b2417",
+          "#494131",
+          "#6a604d",
+          "#8b816e",
+          "#ada492",
+          "#d1c8b8",
+          "#f5eedf"
+        ]
+      },
+      "night-red": {
+        "role": "primary",
+        "displayName": "Night Vermilion",
+        "canonical": "oklch(63.6% 0.185 30.6)",
+        "tonalRamp": [
+          "#2d0000",
+          "#560000",
+          "#810000",
+          "#af2616",
+          "#d74e3b",
+          "#f77b67",
+          "#ffa692",
+          "#ffd1be"
+        ]
+      },
+      "night-blue": {
+        "role": "secondary",
+        "displayName": "Night Cornflower",
+        "canonical": "oklch(69.9% 0.119 265.1)",
+        "tonalRamp": [
+          "#01062a",
+          "#0f214f",
+          "#273f77",
+          "#425ea1",
+          "#6180c6",
+          "#86a4e4",
+          "#adc9ff",
+          "#d6efff"
+        ]
+      },
+      "night-on-red": {
+        "role": "neutral",
+        "displayName": "Black Knockout",
+        "canonical": "oklch(18.4% 0.009 75.0)",
+        "tonalRamp": [
+          "#0d0b08",
+          "#272521",
+          "#44413d",
+          "#64615c",
+          "#85827d",
+          "#a8a4a0",
+          "#ccc8c4",
+          "#f1eeea"
+        ]
+      },
+      "night-on-blue": {
+        "role": "neutral",
+        "displayName": "Black Knockout",
+        "canonical": "oklch(18.4% 0.009 75.0)",
+        "tonalRamp": [
+          "#0d0b08",
+          "#272521",
+          "#44413d",
+          "#64615c",
+          "#85827d",
+          "#a8a4a0",
+          "#ccc8c4",
+          "#f1eeea"
+        ]
+      },
+      "night-on-ink": {
+        "role": "neutral",
+        "displayName": "Black Knockout",
+        "canonical": "oklch(18.4% 0.009 75.0)",
+        "tonalRamp": [
+          "#0d0b08",
+          "#272521",
+          "#44413d",
+          "#64615c",
+          "#85827d",
+          "#a8a4a0",
+          "#ccc8c4",
+          "#f1eeea"
+        ]
+      },
+      "night-ghost": {
+        "role": "neutral",
+        "displayName": "Night Ghost Impression",
+        "canonical": "rgb(239 227 200 / 0.16)"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Wood Type Display",
+        "purpose": "Title, lot name, SOLD word; sized to fill the measure (cqi clamps / FitText). Arabic: Lalezar, line-height 1.22, no tracking."
+      },
+      "bid-figure": {
+        "displayName": "Bid Figure",
+        "purpose": "Current bid in the holder ink; tabular lining figures."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section heads, resume and act titles."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Topbar title, corner names, button text."
+      },
+      "slab": {
+        "displayName": "Slab Ticket",
+        "purpose": "Ratings, OVR column, values. Arabic: Rakkas, line-height 1.35."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Rules text, notes, hints in both scripts."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Corner tags, stat heads, bid labels; uppercase, 0.08em tracking."
+      },
+      "label-ar": {
+        "displayName": "Arabic Label",
+        "purpose": "Label role under :lang(ar): Changa 700, no tracking."
+      }
+    },
+    "shadows": [
+      {
+        "name": "off-register-blue",
+        "value": "0.035em 0.03em 0 color-mix(in srgb, var(--blue) 30%, transparent)",
+        "purpose": "Second ink pass a hair off register on display type (print effect, not elevation)."
+      },
+      {
+        "name": "off-register-red",
+        "value": "-0.035em 0.03em 0 color-mix(in srgb, var(--red) 30%, transparent)",
+        "purpose": "Mirror off-register pass in red."
+      },
+      {
+        "name": "double-rule",
+        "value": "0 5px 0 0 var(--stock), 0 9px 0 0 var(--rule)",
+        "purpose": "Builds a double rule under a 2px top border; zero blur."
+      },
+      {
+        "name": "flag-keyline",
+        "value": "0 0 0 1px var(--ghost)",
+        "purpose": "Hairline around flag images."
+      }
+    ],
+    "surfaces": [
+      {
+        "name": "paper-grain",
+        "value": "body::before fixed fractalNoise SVG (240px), pointer-events none, z-index 100; opacity 0.32 multiply (day) / 0.22 screen (night)",
+        "purpose": "Poster-stock grain over everything; never intercepts input."
+      },
+      {
+        "name": "mottle",
+        "value": "var(--mottle) fractalNoise SVG at background-size 260px over solid ink",
+        "purpose": "Paper shows through solid ink blocks."
+      },
+      {
+        "name": "worn",
+        "value": "speckled SVG mask-image at mask-size 420px",
+        "purpose": "Dry spots in worn wood type."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The single easing for presses, stamps, rises and state changes."
+      },
+      {
+        "name": "press",
+        "value": "180ms",
+        "purpose": "Button and choice transform, colour and opacity transitions (hover lift -1px, active translateY(1px) scale(0.985))."
+      },
+      {
+        "name": "press-in",
+        "value": "340ms; scale(1.12) blur(1.5px) opacity 0.2 -> scale(0.985) at 60% -> scale(1)",
+        "purpose": "Each new bid pressed onto the bill."
+      },
+      {
+        "name": "stamp-slam",
+        "value": "420ms; rotate(var(--stamp-rot, -9deg)) scale(2.2) opacity 0 -> scale(0.94) at 55% -> scale(1)",
+        "purpose": "SOLD stamp, slammed once."
+      },
+      {
+        "name": "rise",
+        "value": "260-420ms, delays 260-420ms; translateY(8px) + fade in",
+        "purpose": "Reveals, resume block, next-round control, match events."
+      },
+      {
+        "name": "turn-wash",
+        "value": "240ms background-color",
+        "purpose": "Bout side changing turn."
+      },
+      {
+        "name": "fuse",
+        "value": "100ms linear transform (scaleX from the start edge)",
+        "purpose": "Timer rule burning down."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: animation-duration and transition-duration 1ms, iteration-count 1",
+        "purpose": "Instant swap; final state always correct."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "two-column",
+        "value": "760px"
+      },
+      {
+        "name": "setup-wide",
+        "value": "820px"
+      },
+      {
+        "name": "results-wide",
+        "value": "860px"
+      },
+      {
+        "name": "table-desktop",
+        "value": "1080px"
+      },
+      {
+        "name": "page-max",
+        "value": "1240px"
+      }
+    ],
+    "themes": {
+      "day": {
+        "selector": ":root (default) / [data-theme=\"day\"]",
+        "colorScheme": "light"
+      },
+      "night": {
+        "selector": ":root[data-theme=\"night\"], or prefers-color-scheme: dark when no data-theme is set",
+        "colorScheme": "dark",
+        "tokens": "night-* keys replace their unprefixed names in place"
+      }
+    },
+    "constraints": [
+      "No club logos, official crests, player photos or likenesses: clubs are kit-colour monogram roundels, nations are flags with alt names, teams are generated crests (4 shapes x 6 marks) in corner ink.",
+      "Colour is never the only signal: every corner ink has a text label.",
+      "Western (en-US) digits everywhere via .num.",
+      "RTL first; logical properties; directional icons flip.",
+      "WCAG AA contrast; pinch-zoom allowed; reduced motion respected."
+    ]
+  },
+  "components": [
+    {
+      "name": "Solid Red Block",
+      "kind": "button",
+      "refersTo": "button-solid-red",
+      "description": "Primary action (raise, start, confirm): red ink with paper mottle and an inner printed hairline.",
+      "html": "<button class=\"ds-btn ds-btn-red\">+5M</button>",
+      "css": ".ds-btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 0.5em; min-height: 48px; padding: 0.55em 1.1em; border: 3px solid var(--btn-ink); border-radius: var(--radius, 2px); background: transparent; color: var(--btn-ink); font-family: var(--f-display, 'Big Shoulders Display', 'Lalezar', sans-serif); font-weight: 900; font-size: 1.25rem; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1; cursor: pointer; transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), background-color 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn::after { content: ''; position: absolute; inset: 3px; border: 1.5px solid currentColor; opacity: 0.55; pointer-events: none; } .ds-btn:not(:disabled):hover { transform: translateY(-1px); } .ds-btn:not(:disabled):active { transform: translateY(1px) scale(0.985); } .ds-btn:focus-visible { outline: 3px solid var(--blue, #1f3b73); outline-offset: 3px; } .ds-btn:disabled { opacity: 0.32; filter: grayscale(0.6); cursor: not-allowed; } .ds-btn-red { --btn-ink: var(--red, #b3261e); background-color: var(--red, #b3261e); background-image: var(--mottle); background-size: 260px; color: var(--on-red, #f7eedb); }"
+    },
+    {
+      "name": "Blue Outline Block",
+      "kind": "button",
+      "refersTo": "button-outline-blue",
+      "description": "Secondary billed action in blue corner ink, flanked by stars; 9% ink wash on hover.",
+      "html": "<button class=\"ds-btn ds-btn-blue\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 20.9l1.6-7L2 9.2l7.1-.6z\"/></svg> PASS <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 20.9l1.6-7L2 9.2l7.1-.6z\"/></svg></button>",
+      "css": ".ds-btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 0.5em; min-height: 48px; padding: 0.55em 1.1em; border: 3px solid var(--btn-ink); border-radius: var(--radius, 2px); background: transparent; color: var(--btn-ink); font-family: var(--f-display, 'Big Shoulders Display', 'Lalezar', sans-serif); font-weight: 900; font-size: 1.25rem; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1; cursor: pointer; transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), background-color 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn::after { content: ''; position: absolute; inset: 3px; border: 1.5px solid currentColor; opacity: 0.55; pointer-events: none; } .ds-btn:not(:disabled):hover { transform: translateY(-1px); } .ds-btn:not(:disabled):active { transform: translateY(1px) scale(0.985); } .ds-btn:focus-visible { outline: 3px solid var(--blue, #1f3b73); outline-offset: 3px; } .ds-btn:disabled { opacity: 0.32; filter: grayscale(0.6); cursor: not-allowed; } .ds-btn-blue { --btn-ink: var(--blue, #1f3b73); } .ds-btn-blue:not(:disabled):hover { background: color-mix(in srgb, var(--blue, #1f3b73) 9%, transparent); }"
+    },
+    {
+      "name": "Disabled Block",
+      "kind": "button",
+      "refersTo": "button-solid-red",
+      "description": "Disabled is a dry ghost impression: 32% opacity, 60% grayscale.",
+      "html": "<button class=\"ds-btn ds-btn-red\" disabled>+10M</button>",
+      "css": ".ds-btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 0.5em; min-height: 48px; padding: 0.55em 1.1em; border: 3px solid var(--btn-ink); border-radius: var(--radius, 2px); background: transparent; color: var(--btn-ink); font-family: var(--f-display, 'Big Shoulders Display', 'Lalezar', sans-serif); font-weight: 900; font-size: 1.25rem; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1; cursor: pointer; transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), background-color 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn::after { content: ''; position: absolute; inset: 3px; border: 1.5px solid currentColor; opacity: 0.55; pointer-events: none; } .ds-btn:not(:disabled):hover { transform: translateY(-1px); } .ds-btn:not(:disabled):active { transform: translateY(1px) scale(0.985); } .ds-btn:focus-visible { outline: 3px solid var(--blue, #1f3b73); outline-offset: 3px; } .ds-btn:disabled { opacity: 0.32; filter: grayscale(0.6); cursor: not-allowed; } .ds-btn-red { --btn-ink: var(--red, #b3261e); background-color: var(--red, #b3261e); background-image: var(--mottle); background-size: 260px; color: var(--on-red, #f7eedb); }"
+    },
+    {
+      "name": "Choice Ticket",
+      "kind": "chip",
+      "refersTo": "choice",
+      "description": "Segmented printed tickets; the selected one prints solid ink.",
+      "html": "<div class=\"ds-choices\"><button class=\"ds-choice\" aria-pressed=\"true\">4-3-3</button><button class=\"ds-choice\" aria-pressed=\"false\">4-4-2</button></div>",
+      "css": ".ds-choices { display: flex; flex-wrap: wrap; gap: 8px; } .ds-choice { min-height: 44px; padding: 0.35em 0.9em; border: 2px solid var(--ink, #171512); border-radius: var(--radius, 2px); background: transparent; color: var(--ink, #171512); font-family: var(--f-display, 'Big Shoulders Display', 'Lalezar', sans-serif); font-weight: 800; font-size: 1.125rem; text-transform: uppercase; line-height: 1.1; cursor: pointer; } .ds-choice[aria-pressed=\"false\"]:hover { background: var(--ghost, rgb(23 21 18 / 0.16)); } .ds-choice[aria-pressed=\"true\"] { background: var(--ink, #171512); color: var(--on-ink, #efe3c8); } .ds-choice:focus-visible { outline: 3px solid var(--blue, #1f3b73); outline-offset: 3px; }"
+    },
+    {
+      "name": "Lot Broadside",
+      "kind": "card",
+      "refersTo": "rating-box",
+      "description": "The open lot: a double-framed bill with a blue position line, full-measure wood-type name and a stamped red rating box.",
+      "html": "<article class=\"ds-lot\"><span class=\"ds-lot-pos\">ST</span><h3 class=\"ds-lot-name\">STRIKER NAME</h3><div class=\"ds-lot-rate\">88</div></article>",
+      "css": ".ds-lot { display: grid; gap: 10px; justify-items: center; padding: 14px 16px 16px; border: 3px solid var(--ink, #171512); outline: 1.5px solid var(--ink, #171512); outline-offset: -8px; background: var(--stock, #efe3c8); color: var(--ink, #171512); } .ds-lot-pos { color: var(--blue, #1f3b73); font-family: var(--f-display, 'Big Shoulders Display', 'Lalezar', sans-serif); font-weight: 800; font-size: 0.875rem; letter-spacing: 0.08em; text-transform: uppercase; } .ds-lot-name { margin: 0; font-family: var(--f-display, 'Big Shoulders Display', 'Lalezar', sans-serif); font-weight: 900; font-size: 3.5rem; line-height: 0.88; text-transform: uppercase; } .ds-lot-rate { display: grid; place-items: center; min-width: 64px; height: 60px; background: var(--red, #b3261e); color: var(--on-red, #f7eedb); outline: 1.5px solid var(--on-red, #f7eedb); outline-offset: -5px; font-family: var(--f-slab, 'Alfa Slab One', serif); font-size: 2.1rem; }"
+    },
+    {
+      "name": "Bout Band",
+      "kind": "custom",
+      "refersTo": "vs-disc",
+      "description": "Red corner vs blue corner; the side on turn takes a 10% corner wash and a 6px corner bar; VS disc on the seam.",
+      "html": "<div class=\"ds-bout\"><div class=\"ds-side\" data-turn><span class=\"ds-cn\">RED CORNER</span><b>€312M</b></div><span class=\"ds-vs\">VS</span><div class=\"ds-side ds-blue\"><span class=\"ds-cn\">BLUE CORNER</span><b>€290M</b></div></div>",
+      "css": ".ds-bout { position: relative; display: grid; grid-template-columns: 1fr 1fr; border-block: 4px solid var(--ink, #171512); } .ds-side { --c: var(--red, #b3261e); position: relative; display: grid; padding: 10px 12px; color: var(--c); transition: background-color 240ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-blue { --c: var(--blue, #1f3b73); border-inline-start: 2px solid var(--ink, #171512); text-align: end; } .ds-side[data-turn] { background: color-mix(in srgb, var(--c) 10%, transparent); } .ds-side[data-turn]::before { content: ''; position: absolute; inset-inline: 0; top: 0; height: 6px; background: var(--c); } .ds-cn { font-family: var(--f-display, 'Big Shoulders Display', 'Lalezar', sans-serif); font-weight: 800; font-size: 0.75rem; letter-spacing: 0.08em; } .ds-side b { font-family: var(--f-display, 'Big Shoulders Display', 'Lalezar', sans-serif); font-weight: 900; font-size: 2.2rem; line-height: 0.9; font-variant-numeric: tabular-nums lining-nums; } .ds-vs { position: absolute; top: 50%; left: 50%; translate: -50% -50%; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--ink, #171512); color: var(--on-ink, #efe3c8); font-family: var(--f-display, 'Big Shoulders Display', 'Lalezar', sans-serif); font-weight: 900; font-size: 0.85rem; }"
+    },
+    {
+      "name": "Bid Figure with Ghost",
+      "kind": "custom",
+      "description": "The current bid pressed in the holder ink over the previous bid as a dry 8% impression; press-in on every change.",
+      "html": "<div class=\"ds-bid\"><span class=\"ds-ghost\">45</span><span class=\"ds-amt\">50</span></div>",
+      "css": ".ds-bid { display: grid; place-items: center; font-family: var(--f-display, 'Big Shoulders Display', 'Lalezar', sans-serif); font-weight: 900; font-size: clamp(3.6rem, 17vw, 6rem); line-height: 0.9; font-variant-numeric: tabular-nums lining-nums; } .ds-bid > span { grid-area: 1 / 1; } .ds-ghost { color: var(--ink, #171512); opacity: 0.08; translate: 0.18em -0.08em; } .ds-amt { color: var(--red, #b3261e); animation: ds-press-in 340ms cubic-bezier(0.16, 1, 0.3, 1) both; } @keyframes ds-press-in { 0% { transform: scale(1.12); filter: blur(1.5px); opacity: 0.2; } 60% { transform: scale(0.985); filter: blur(0); opacity: 1; } 100% { transform: scale(1); } } @media (prefers-reduced-motion: reduce) { .ds-amt { animation-duration: 1ms; } }"
+    },
+    {
+      "name": "SOLD Stamp",
+      "kind": "custom",
+      "description": "Rubber stamp in the winner ink, rotated -9deg (red) or 8deg (blue), slammed once.",
+      "html": "<div class=\"ds-stamp\"><span>SOLD</span><small>TO RED CORNER</small></div>",
+      "css": ".ds-stamp { display: inline-grid; justify-items: center; gap: 2px; padding: 6px 22px 10px; border: 5px solid var(--red, #b3261e); outline: 2px solid var(--red, #b3261e); outline-offset: 4px; color: var(--red, #b3261e); background: color-mix(in srgb, var(--stock, #efe3c8) 82%, transparent); transform: rotate(-9deg); animation: ds-stamp-slam 420ms cubic-bezier(0.16, 1, 0.3, 1) both; font-family: var(--f-display, 'Big Shoulders Display', 'Lalezar', sans-serif); font-weight: 900; text-transform: uppercase; } .ds-stamp span { font-size: 4rem; line-height: 0.88; } .ds-stamp small { font-family: var(--f-body, 'Changa', sans-serif); font-weight: 700; font-size: 1.05rem; } @keyframes ds-stamp-slam { 0% { transform: rotate(-9deg) scale(2.2); opacity: 0; } 55% { transform: rotate(-9deg) scale(0.94); opacity: 1; } 100% { transform: rotate(-9deg) scale(1); opacity: 1; } } @media (prefers-reduced-motion: reduce) { .ds-stamp { animation-duration: 1ms; } }"
+    },
+    {
+      "name": "Mystery Strip",
+      "kind": "custom",
+      "refersTo": "mystery-strip",
+      "description": "The hidden lot as a narrow folded blue strip with vertical type and an inset cream hairline.",
+      "html": "<div class=\"ds-mystery\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 20.9l1.6-7L2 9.2l7.1-.6z\"/></svg><span class=\"ds-mt\">MYSTERY</span><span class=\"ds-q\">?</span><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 20.9l1.6-7L2 9.2l7.1-.6z\"/></svg></div>",
+      "css": ".ds-mystery { display: inline-flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 8px; width: 54px; min-height: 220px; padding: 12px 4px; background-color: var(--blue, #1f3b73); color: var(--on-blue, #f7eedb); outline: 1.5px solid var(--on-blue, #f7eedb); outline-offset: -5px; font-family: var(--f-display, 'Big Shoulders Display', 'Lalezar', sans-serif); font-weight: 900; } .ds-mt { writing-mode: vertical-rl; font-size: 1.35rem; line-height: 1; } .ds-q { font-size: 2rem; line-height: 1; }"
+    },
+    {
+      "name": "Squad Tabs",
+      "kind": "nav",
+      "description": "Phone squad tabs; the selected tab takes its corner ink and a 5px underline.",
+      "html": "<div class=\"ds-tabs\" role=\"tablist\"><button role=\"tab\" aria-selected=\"true\" class=\"ds-tab ds-tab-red\">RED</button><button role=\"tab\" aria-selected=\"false\" class=\"ds-tab ds-tab-blue\">BLUE</button></div>",
+      "css": ".ds-tabs { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 2px solid var(--ink, #171512); } .ds-tab { min-height: 46px; border: 0; border-bottom: 5px solid transparent; margin-bottom: -2px; background: transparent; color: var(--ink-3, #6b6355); font-family: var(--f-display, 'Big Shoulders Display', 'Lalezar', sans-serif); font-weight: 900; font-size: 1.15rem; text-transform: uppercase; cursor: pointer; } .ds-tab:hover { color: var(--ink, #171512); } .ds-tab:focus-visible { outline: 3px solid var(--blue, #1f3b73); outline-offset: 3px; } .ds-tab-red[aria-selected=\"true\"] { color: var(--red, #b3261e); border-bottom-color: var(--red, #b3261e); } .ds-tab-blue[aria-selected=\"true\"] { color: var(--blue, #1f3b73); border-bottom-color: var(--blue, #1f3b73); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Tonight's Fight Bill",
+    "overview": "Every auction round is a freshly printed boxing-style poster in the Hatch Show Print tradition. The open lot is the headline act, set in condensed wood type that fills the full measure. The two managers are billed against each other as the RED corner and the BLUE corner. The ground is cream poster stock with visible paper grain. Every mark on it is ink: solid blocks that show a mottle of paper through them, heavy black rules, star ornaments, and a second ink pass that lands a hair off register.\n\nThe density is that of a bill, not an app. Bands run edge to edge and are separated by 3–4px rules. Type is sized to fill its measure rather than picked from a fixed scale (see FitText). Numbers are the loudest thing on screen because the table has to be read from across a couch. There is a night-print variant: the same inks on black stock, chosen by `data-theme=\"night\"` or by the OS dark preference.\n\nMotion is the press. A new bid is pulled onto the poster as one impression, the previous bid stays behind as a dry ghost, and SOLD is a rubber stamp slammed at an angle. The system refuses the category default of glowing gold player cards on a dark pitch-green background.",
+    "keyCharacteristics": [
+      "Cream poster stock with multiply grain (paper) or screen grain (night), fixed over everything and never intercepting input.",
+      "Two corner inks, barn red and deep blue. Each always appears with a text label, so colour is never the only signal.",
+      "Condensed wood type for display, a slab face for figures, and Changa for reading text. Arabic-first, with Arabic fallbacks in every stack.",
+      "Square printed blocks (2px radius) with an inner printed hairline.",
+      "Flat print depth: rules, outlines and ink, never floating cards.",
+      "Motion grammar is press-in, stamp-slam and rise. Under reduced motion these become an instant swap."
+    ],
+    "rules": [
+      {
+        "name": "The Two Corners Rule",
+        "body": "Red and blue mean only \"red corner\" and \"blue corner\" (plus red as primary action and SOLD). Never introduce a third team or status hue. Every red or blue mark has a text partner, such as the corner label, the name or \"RED/BLUE\".",
+        "section": "colors"
+      },
+      {
+        "name": "The Overprint Rule",
+        "body": "A tinted surface is the corner ink mixed into transparent (`color-mix(in srgb, var(--corner) 10–12%, transparent)`), never a new pastel token. This is how the bout side whose turn it is, and the current squad row, are lit.",
+        "section": "colors"
+      },
+      {
+        "name": "The Night Print Rule",
+        "body": "Night is the same poster pulled on black stock, not a separate theme. Every token swaps in place. Grain flips from multiply (0.32) to screen (0.22), and on-colours flip to black stock.",
+        "section": "colors"
+      },
+      {
+        "name": "The Full Measure Rule",
+        "body": "Headline wood type is sized to its container (`container-type: inline-size` with `cqi` clamps, or FitText between min and max px). It is not chosen from a fixed ramp. A line of wood type spans the bill.",
+        "section": "typography"
+      },
+      {
+        "name": "The Western Digits Rule",
+        "body": "Every number uses `.num`: tabular lining figures, `direction: ltr` and isolated bidi. Digits are always en-US, including in Arabic.",
+        "section": "typography"
+      },
+      {
+        "name": "The Ink, Not Air Rule",
+        "body": "Separate things with a rule, an outline or a change of ink, never a blurred drop shadow or a lifted card.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do separate regions with ink rules (4px bands, 3px blocks, 2px tables, 1px ghost) and inset outlines.",
+      "Do fill the measure with display wood type using container-query clamps or FitText.",
+      "Do pair every red or blue signal with a text label for the corner, name or turn.",
+      "Do print solid blocks with the paper mottle and an inner hairline, so ink never reads as a flat digital fill.",
+      "Do set every number with `.num` in Western digits.",
+      "Do design RTL first using logical properties, with Arabic fallbacks in every font stack.",
+      "Do honour reduced motion by making it an instant swap. A stamp or bid must be legible at its final state with no animation.",
+      "Do render clubs as kit-colour monogram roundels and teams as generated crests."
+    ],
+    "donts": [
+      "Don't use club logos, official crests, player photos or likenesses.",
+      "Don't add a third accent hue or a gold or glow treatment. The palette is stock, ink, red and blue.",
+      "Don't use rounded cards, pill buttons or blurred drop shadows to create depth.",
+      "Don't make colour the only carrier of team or turn.",
+      "Don't use system display faces. The wood type is Big Shoulders Display or Lalezar, and the slab is Alfa Slab One or Rakkas."
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+.pitch {
+  --corner: var(--red);
+  position: relative;
+  aspect-ratio: 100 / 120;
+  width: 100%;
+  container-type: inline-size;
+}
+
+.pitch--blue {
+  --corner: var(--blue);
+}
+
+.pitch__lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 0.7;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.55;
+}
+
+.pitch__lines * {
+  vector-effect: non-scaling-stroke;
+  stroke-width: 2px;
+}
+
+.pitch__players {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  inset: 0;
+}
+
+.pitch__players li {
+  position: absolute;
+  translate: -50% -50%;
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  width: 24cqi;
+  text-align: center;
+}
+
+.pitch__ovr {
+  display: grid;
+  place-items: center;
+  width: clamp(30px, 11cqi, 44px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--corner);
+  color: var(--stock);
+  font-size: clamp(0.9rem, 4.6cqi, 1.25rem);
+  outline: 1.5px solid var(--corner);
+  outline-offset: 2px;
+}
+
+.pitch__name {
+  font-weight: 700;
+  font-size: clamp(0.72rem, 3.6cqi, 0.95rem);
+  line-height: 1.15;
+  background: var(--stock);
+  padding: 0 4px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

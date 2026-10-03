@@ -1,0 +1,122 @@
+{
+  "title": "Choose the visual world for Star Auction",
+  "question": "The roll assigned Stadium Scoreboard. Keep it, take an alternate, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Stadium Scoreboard",
+      "kicker": "THE ROLL",
+      "lineage": "LED stadium scoreboards and the fourth official's substitution board",
+      "thesis": "The auction runs on the stadium's own scoreboard: every lot, bid and second lit in LED you can read from the far end of the majlis.",
+      "palette": ["#0b0d0c", "#ffb21a", "#3be37f", "#ff4b3a", "#e9efe9"],
+      "materials": ["dot-matrix LED panels", "matte black housing", "brushed aluminium frame", "hard push buttons"],
+      "viewport": "Top half is the lit board: the lot in big type, the current bid in giant LED numerals and a game clock. Below sit the two team panels (home/away) with their budgets, and chunky bid buttons.",
+      "risk": "Arabic dot-matrix faces are rare, so names stay in solid Arabic type and the LED treatment goes on numerals and labels. Done timidly, it reads as retro-arcade.",
+      "raised": [
+        { "from": "challenger-ascii", "raise": "One dot grid sets the whole numeric type scale, with no free-floating font sizes." },
+        { "from": "challenger-sixpack", "raise": "Each panel owns one truth and shows its trend: budgets show the last delta, the clock shows its drain." },
+        { "from": "challenger-coil", "raise": "The squad builds as one lit course per round, a visible record of the draft." },
+        { "from": "challenger-film", "raise": "One alert colour is reserved for the live lot and nothing else." }
+      ]
+    },
+    {
+      "id": "model-pick",
+      "label": "Match Night Broadcast",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "Arabic sports-TV graphics packages: score bug, lower thirds, deadline-day ticker",
+      "thesis": "The auction is broadcast live, like transfer deadline night on Arabic sports TV.",
+      "palette": ["#140a2a", "#6a2cff", "#f4f1ff", "#ffcf3a"],
+      "materials": ["glossy broadcast panels", "angled lower thirds", "breaking-news ticker"],
+      "viewport": "A broadcast frame: the lot as an angled lower-third over the pitch, a score bug with both budgets, and a breaking ticker of past sales.",
+      "risk": "This is the familiar choice: most sports apps already look like TV graphics."
+    },
+    {
+      "id": "challenger-gateboard",
+      "label": "Departure Board",
+      "verdict": "competitive",
+      "lineage": "airport gate boards and segmented boarding passes",
+      "thesis": "The transfer window as a live departures board: each lot is a row that reranks and flashes when its status changes.",
+      "palette": ["#111316", "#f2f2ee", "#ffd400", "#2a2e33"],
+      "materials": ["split-flap rows", "tabular figures", "pass segments"],
+      "viewport": "A board of the round's lots, plus your squad as a boarding pass with a segment per position.",
+      "case": "Fuses cleanly (transfers are departures, and the change flash maps to a new top bid) and is strong on clarity, but Arab fans place football on the stadium board before the airport board.",
+      "risk": "It can read as travel-app cosplay, and the hidden card has no natural home on a board."
+    },
+    {
+      "id": "challenger-hatch",
+      "label": "Fight-Night Poster",
+      "verdict": "competitive",
+      "lineage": "Hatch Show Print letterpress wood-type posters",
+      "thesis": "Every round is printed as tonight's bout poster: the lot in full-width wood-type bands, each new bid a fresh ink pass.",
+      "palette": ["#efe3c8", "#141414", "#b3261e", "#1f3b73"],
+      "materials": ["wood type", "off-register ink passes", "poster stock"],
+      "viewport": "One tall broadside with the player's name filling the measure, the bid as a red overprint and the rivals billed below.",
+      "case": "Strong headline clarity and the bid-as-ink-pass is memorable, but letterpress posters are not Arab football's own culture.",
+      "risk": "Cream plus wood type drifts into a craft-fair look, and Arabic wood type is hard to source."
+    },
+    {
+      "id": "challenger-ascii",
+      "label": "Phosphor Glyph Scene",
+      "verdict": "declined",
+      "lineage": "ASCII live renders",
+      "palette": ["#050805", "#7dff8a"],
+      "materials": ["monospace glyph grid", "phosphor"],
+      "thesis": "The table drawn entirely in glyph density.",
+      "viewport": "The lot rendered as a glyph portrait.",
+      "risk": "Arabic doesn't fit a monospace grid.",
+      "case": "Fuses poorly: Arabic can't hold a monospace glyph grid, and fans don't recognise it.",
+      "kept": "One strict grid sets the type scale."
+    },
+    {
+      "id": "challenger-sixpack",
+      "label": "Night Flight Six-Pack",
+      "verdict": "declined",
+      "lineage": "aircraft instrument panels",
+      "palette": ["#0a0a0a", "#f2f2f2", "#5cff9d", "#ffb000"],
+      "materials": ["round dials", "damped needles"],
+      "thesis": "Bid, clock and budgets as cockpit gauges.",
+      "viewport": "Six gauges in two rows.",
+      "risk": "Reads as a tool, not a game night.",
+      "case": "Fuses poorly: a cockpit is a tool costume with no football in it.",
+      "kept": "Each panel owns one truth and shows its trend."
+    },
+    {
+      "id": "challenger-coil",
+      "label": "Coiled Earth Tower",
+      "verdict": "declined",
+      "lineage": "coiled clay architecture",
+      "palette": ["#9c4a2a", "#5a3220", "#efe6da"],
+      "materials": ["clay coils", "slip seams"],
+      "thesis": "The squad rises course by course.",
+      "viewport": "A tower of eleven courses.",
+      "risk": "Slow and earthy where the game is fast.",
+      "case": "Fuses poorly: earth and slowness work against a timed bidding war.",
+      "kept": "The draft as a visible, course-by-course build record."
+    },
+    {
+      "id": "challenger-film",
+      "label": "Hand-Processed Film",
+      "verdict": "declined",
+      "lineage": "16mm hand processing",
+      "palette": ["#0c0c0c", "#9a9a92", "#ff7a1a"],
+      "materials": ["emulsion grain", "light leaks"],
+      "thesis": "Each lot as a film frame.",
+      "viewport": "A film strip of the rounds.",
+      "risk": "Noise hurts at-a-glance reading.",
+      "case": "Fuses poorly: the grain fights readability at arm's length.",
+      "kept": "One alert colour reserved for the live lot only."
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "The football-card game look: gold and silver rated cards on a dark pitch-green field.",
+    "palette": ["#0f1a14", "#d4af37", "#c0c0c0", "#ffffff"],
+    "materials": ["metallic card frames", "pitch stripes", "glow edges"],
+    "viewport": "A big glowing player card in the centre, with budgets and bid buttons around it.",
+    "risk": "Indistinguishable from every football card game by design."
+  },
+  "steer": true,
+  "buildPath": { "value": "code", "toggle": false }
+}

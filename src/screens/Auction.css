@@ -1,0 +1,908 @@
+.auction {
+  gap: 14px;
+  padding-top: 6px;
+}
+
+[dir='rtl'] .flip-rtl svg {
+  transform: scaleX(-1);
+}
+
+/* ---------- Top: round + stars ---------- */
+
+.auction__top {
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: 8px;
+}
+
+.auction__round {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.auction__round .display {
+  font-size: 1.25rem;
+}
+
+.auction__stars {
+  display: flex;
+  gap: 3px;
+  color: var(--ink);
+}
+
+.auction__stars .star {
+  width: 14px;
+  height: 14px;
+  opacity: 0.22;
+}
+
+.auction__stars .star.is-done {
+  opacity: 1;
+}
+
+.auction__stars .star.is-now {
+  opacity: 1;
+  color: var(--red);
+}
+
+/* ---------- Bout band: red corner vs blue corner ---------- */
+
+.bout {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-block: 4px solid var(--rule);
+}
+
+.bout__side {
+  --corner: var(--red);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas:
+    'crest who'
+    'money money';
+  align-items: center;
+  gap: 4px 10px;
+  padding: 10px 12px 10px;
+  position: relative;
+  transition: background-color 240ms var(--ease-out);
+}
+
+.bout__side--blue {
+  --corner: var(--blue);
+}
+
+.bout__side + .bout__side {
+  border-inline-start: 2px solid var(--rule);
+}
+
+.bout__side[data-turn] {
+  background: color-mix(in srgb, var(--corner) 10%, transparent);
+}
+
+.bout__side[data-turn]::before {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 6px;
+  background: var(--corner);
+}
+
+.bout__side > svg {
+  grid-area: crest;
+}
+
+.bout__who {
+  grid-area: who;
+  display: grid;
+  min-width: 0;
+}
+
+.bout__corner {
+  color: var(--corner);
+  font-size: 0.75rem;
+}
+
+:lang(ar) .bout__corner {
+  font-size: 0.8125rem;
+}
+
+.bout__name {
+  font-size: 1.35rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--corner);
+}
+
+.bout__money {
+  grid-area: money;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.bout__budget {
+  font-size: clamp(1.9rem, 8vw, 2.6rem);
+}
+
+.bout__delta {
+  font-size: 0.9rem;
+  color: var(--ink-2);
+  font-weight: 600;
+}
+
+.bout__vs {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--on-ink);
+  font-size: 0.85rem;
+}
+
+:lang(ar) .bout__vs {
+  font-size: 0.8rem;
+}
+
+/* ---------- Stage ---------- */
+
+.auction__stage {
+  display: grid;
+  gap: 16px;
+}
+
+.auction__side {
+  display: none;
+}
+
+.auction__centre {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+}
+
+.auction__lots {
+  display: grid;
+  gap: 10px;
+}
+
+/* ---------- The lot: tonight's headline act ---------- */
+
+.lot {
+  position: relative;
+  container-type: inline-size;
+  padding: 14px 16px 16px;
+  border: 3px solid var(--rule);
+  outline: 1.5px solid var(--rule);
+  outline-offset: -8px;
+  display: grid;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.lot__pos {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.lot__rating {
+  display: grid;
+  place-items: center;
+  min-width: 64px;
+  height: 60px;
+  padding-inline: 8px;
+  background-color: var(--red);
+  color: var(--on-red);
+  outline: 1.5px solid var(--on-red);
+  outline-offset: -5px;
+}
+
+.lot__rating .slab {
+  font-size: 2.1rem;
+  line-height: 1;
+}
+
+.lot__name {
+  margin: 4px 0 0;
+  padding-inline: 4px;
+  text-align: center;
+  font-size: inherit;
+}
+
+.lot__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px 8px;
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.lot__dot .star {
+  width: 10px;
+  height: 10px;
+  color: var(--red);
+  display: block;
+}
+
+.flag {
+  width: 1.45em;
+  height: 1.09em;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px var(--ghost);
+  border-radius: 1px;
+  flex: none;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  margin: 0;
+  border-block: 2px solid var(--rule);
+}
+
+.stats__cell {
+  display: grid;
+  justify-items: center;
+  padding-block: 6px;
+}
+
+.stats__cell + .stats__cell {
+  border-inline-start: 1px solid var(--ghost);
+}
+
+.stats dt {
+  font-size: 0.7rem;
+  color: var(--ink-2);
+}
+
+:lang(ar) .stats dt {
+  font-size: 0.75rem;
+}
+
+.stats dd {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.lot__value {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  grid-template-columns: auto;
+  align-items: baseline;
+  gap: 0 14px;
+}
+
+.lot__value .lot__rating {
+  grid-row: span 2;
+  align-self: center;
+}
+
+.lot__value .label {
+  color: var(--ink-2);
+  font-size: 0.75rem;
+}
+
+.lot__value .display {
+  font-size: 1.6rem;
+}
+
+
+/* SOLD: one rubber stamp, slammed once. */
+.stamp {
+  --stamp-ink: var(--red);
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: fit-content;
+  height: fit-content;
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  padding: 6px 22px 10px;
+  border: 5px solid var(--stamp-ink);
+  outline: 2px solid var(--stamp-ink);
+  outline-offset: 4px;
+  color: var(--stamp-ink);
+  background: color-mix(in srgb, var(--stock) 82%, transparent);
+  transform: rotate(-9deg);
+  animation: stamp-slam 420ms var(--ease-out) both;
+  pointer-events: none;
+  max-width: 90%;
+  text-align: center;
+}
+
+.stamp--blue {
+  --stamp-ink: var(--blue);
+  --stamp-rot: 8deg;
+  transform: rotate(8deg);
+}
+
+.stamp__word {
+  font-size: clamp(3.4rem, 22cqi, 6rem);
+}
+
+.stamp__to {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+/* ---------- The hidden card: a folded strip beside the bill ---------- */
+
+.auction__lots {
+  grid-template-columns: minmax(0, 1fr) 54px;
+  align-items: stretch;
+}
+
+.mystery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 4px;
+  background-color: var(--blue);
+  color: var(--on-blue);
+  outline: 1.5px solid var(--on-blue);
+  outline-offset: -5px;
+}
+
+.mystery .star {
+  width: 12px;
+  height: 12px;
+}
+
+.mystery__title {
+  writing-mode: vertical-rl;
+  font-size: 1.35rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+:lang(ar) .mystery__title {
+  line-height: 1.1;
+}
+
+.mystery__q {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.mystery__text {
+  display: grid;
+  align-content: center;
+  gap: 2px;
+  padding: 8px 12px;
+}
+
+.mystery--open {
+  --corner: var(--red);
+  grid-column: 1 / -1;
+  display: block;
+  padding: 0;
+  background: none;
+  color: var(--ink);
+  outline: 0;
+  border: 3px solid var(--corner);
+  border-color: var(--corner);
+  animation: rise 380ms var(--ease-out) 260ms both;
+}
+
+.mystery--open.mystery--blue {
+  --corner: var(--blue);
+}
+
+.mystery--open .label {
+  color: var(--corner);
+}
+
+.mystery__name {
+  font-size: 1.9rem;
+}
+
+.mystery__line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mystery__line .slab {
+  font-size: 1.2rem;
+}
+
+.mystery__gem {
+  padding: 2px 8px;
+  background: var(--red);
+  color: var(--on-red);
+  font-size: 1rem;
+}
+
+/* ---------- Top bid ---------- */
+
+.bid {
+  --holder: var(--ink);
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 2px;
+}
+
+.bid--red {
+  --holder: var(--red);
+}
+
+.bid--blue {
+  --holder: var(--blue);
+}
+
+.bid__label {
+  color: var(--ink-2);
+}
+
+.bid__figure {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.bid__amount,
+.bid__ghost {
+  grid-area: 1 / 1;
+  font-size: clamp(3.6rem, 17vw, 6rem);
+  line-height: 0.9;
+}
+
+.bid__amount {
+  color: var(--holder);
+  animation: press-in 340ms var(--ease-out) both;
+}
+
+.bid:not(.bid--red):not(.bid--blue) .bid__amount {
+  color: var(--ink-3);
+}
+
+/* The previous bid stays on the stock as a dry impression. */
+.bid__ghost {
+  color: var(--ink);
+  opacity: 0.08;
+  translate: 0.18em -0.08em;
+}
+
+.bid__holder {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--holder);
+}
+
+.fuse {
+  --corner: var(--red);
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.fuse--blue {
+  --corner: var(--blue);
+}
+
+.fuse__who {
+  color: var(--corner);
+}
+
+.fuse__line {
+  height: 5px;
+  background: var(--corner);
+  transform-origin: left center;
+  transition: transform 100ms linear;
+}
+
+[dir='rtl'] .fuse__line {
+  transform-origin: right center;
+}
+
+.fuse__line[data-low] {
+  background: var(--red);
+  height: 7px;
+}
+
+.fuse__secs {
+  font-family: var(--f-display);
+  font-weight: 900;
+  font-size: 1.3rem;
+  min-width: 2ch;
+}
+
+/* ---------- Controls ---------- */
+
+.controls {
+  display: grid;
+  gap: 10px;
+}
+
+.controls__raises {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.controls__raises .btn {
+  min-height: 60px;
+  font-size: 1.45rem;
+  padding-inline: 0.4em;
+}
+
+.controls__row {
+  display: flex;
+  gap: 8px;
+}
+
+.controls__row .btn {
+  flex: 1;
+}
+
+.controls__pass {
+  font-size: 1.35rem;
+}
+
+.controls__hint {
+  margin: 0;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.controls__note {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-weight: 600;
+  text-align: center;
+}
+
+.controls--sold {
+  justify-items: stretch;
+}
+
+.controls__next {
+  animation: rise 300ms var(--ease-out) 420ms both;
+}
+
+/* ---------- Squad sheets ---------- */
+
+.sheet {
+  --corner: var(--red);
+  border-top: 6px solid var(--corner);
+}
+
+.sheet--blue {
+  --corner: var(--blue);
+}
+
+.sheet__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 2px solid var(--rule);
+}
+
+.sheet__head .display {
+  font-size: 1.3rem;
+  color: var(--corner);
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sheet__spent {
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.sheet__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sheet__row {
+  display: grid;
+  grid-template-columns: 4.2em minmax(0, 1fr) 2.2em 4.4em;
+  align-items: center;
+  gap: 6px;
+  min-height: 38px;
+  padding-inline: 4px;
+  border-bottom: 1px solid var(--ghost);
+}
+
+.sheet__row[data-current] {
+  background: color-mix(in srgb, var(--corner) 12%, transparent);
+}
+
+.sheet__row[data-current] .star {
+  color: var(--corner);
+  width: 14px;
+  height: 14px;
+}
+
+.sheet__pos {
+  font-size: 0.75rem;
+  color: var(--ink-2);
+}
+
+.sheet__name {
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sheet__name--empty {
+  color: var(--ink-3);
+  font-weight: 400;
+  grid-column: span 3;
+}
+
+.sheet__ovr {
+  font-family: var(--f-slab);
+  text-align: center;
+}
+
+.sheet__price {
+  text-align: end;
+  font-size: 0.85rem;
+  color: var(--ink-2);
+}
+
+.sheet__price .star {
+  width: 13px;
+  height: 13px;
+  color: var(--blue);
+}
+
+/* ---------- Mobile squad tabs ---------- */
+
+.auction__tabs {
+  display: grid;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.auction__tablist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 2px solid var(--rule);
+}
+
+.auction__tab {
+  min-height: 46px;
+  border: 0;
+  background: transparent;
+  font-family: var(--f-display);
+  font-weight: 900;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  border-bottom: 5px solid transparent;
+  margin-bottom: -2px;
+}
+
+.auction__tab--red[aria-selected='true'] {
+  color: var(--red);
+  border-bottom-color: var(--red);
+}
+
+.auction__tab--blue[aria-selected='true'] {
+  color: var(--blue);
+  border-bottom-color: var(--blue);
+}
+
+.auction__tabs .sheet {
+  border-top: 0;
+}
+
+.auction__tabs .sheet__head {
+  display: none;
+}
+
+.auction__keys {
+  display: none;
+  text-align: center;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* ---------- Phone: the bid and the buttons stay docked in thumb reach ---------- */
+
+.auction__dock {
+  display: grid;
+  gap: 12px;
+}
+
+@media (max-width: 1079px) {
+  .auction__dock {
+    position: sticky;
+    bottom: 0;
+    z-index: 5;
+    margin-inline: calc(var(--gutter) * -1);
+    padding: 8px var(--gutter) calc(10px + env(safe-area-inset-bottom));
+    background: var(--stock);
+    border-top: 4px solid var(--rule);
+    /* A printed double rule, not a soft shadow: the dock is another band of the bill. */
+    box-shadow: inset 0 3px 0 0 var(--stock), inset 0 5px 0 0 var(--rule);
+    gap: 8px;
+  }
+  .bid {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      'label figure'
+      'holder figure'
+      'fuse fuse';
+    justify-items: start;
+    text-align: start;
+    column-gap: 12px;
+  }
+  .bid__label {
+    grid-area: label;
+    align-self: end;
+  }
+  .bid__holder {
+    grid-area: holder;
+    align-self: start;
+  }
+  .bid__figure {
+    grid-area: figure;
+    justify-self: end;
+  }
+  .bid__amount,
+  .bid__ghost {
+    font-size: clamp(2.6rem, 12vw, 3.6rem);
+  }
+  .controls__raises .btn {
+    min-height: 50px;
+  }
+  .fuse {
+    grid-area: fuse;
+    margin-top: 2px;
+  }
+  .controls {
+    gap: 8px;
+  }
+  .controls__raises .btn {
+    min-height: 54px;
+    font-size: 1.3rem;
+  }
+  .controls__row .btn {
+    min-height: 46px;
+  }
+  .controls__hint {
+    display: none;
+  }
+  /* Tighter bill so the lot and the dock share the first screen. */
+  .lot {
+    padding: 10px 12px 12px;
+    gap: 8px;
+  }
+  .lot__rating {
+    height: 50px;
+    min-width: 54px;
+  }
+  .lot__rating .slab {
+    font-size: 1.75rem;
+  }
+  .stats dd {
+    font-size: 1.3rem;
+  }
+  .lot__value .display {
+    font-size: 1.3rem;
+  }
+  .mystery__name {
+    font-size: 1.5rem;
+  }
+  .stamp {
+    padding: 4px 14px 8px;
+    max-width: 78%;
+    outline-offset: 3px;
+  }
+  .stamp__word {
+    font-size: clamp(2.6rem, 17cqi, 4.5rem);
+  }
+  .stamp__to {
+    font-size: 0.95rem;
+    line-height: 1.25;
+  }
+  .bout__side {
+    padding: 8px 10px;
+  }
+  .bout__budget {
+    font-size: clamp(1.6rem, 7vw, 2.4rem);
+  }
+}
+
+/* ---------- Wider screens ---------- */
+
+@media (min-width: 1080px) {
+  .auction__stage {
+    grid-template-columns: 270px minmax(0, 1fr) 270px;
+    align-items: start;
+    gap: 24px;
+  }
+  .auction__side {
+    display: block;
+    position: sticky;
+    top: 12px;
+  }
+  .auction__side--red {
+    order: 0;
+  }
+  .auction__centre {
+    order: 1;
+  }
+  .auction__side--blue {
+    order: 2;
+  }
+  .auction__tabs {
+    display: none;
+  }
+  .auction__keys {
+    display: block;
+  }
+  .bout__side {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas: 'crest who money';
+    padding: 12px 18px;
+  }
+  .bout__side--blue {
+    padding-inline-start: 38px;
+  }
+  .bout__side--red {
+    padding-inline-end: 38px;
+  }
+  .bout__money {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0;
+  }
+  .bout__name {
+    font-size: 1.7rem;
+  }
+  .bout__vs {
+    width: 52px;
+    height: 52px;
+    font-size: 1rem;
+  }
+}
+
+.btn__stack {
+  display: grid;
+  line-height: 1.05;
+  font-size: 0.92em;
+}
+
+@media (min-width: 1080px) {
+  .auction__lots {
+    grid-template-columns: minmax(0, 1fr) 76px;
+  }
+  .mystery__title {
+    font-size: 1.7rem;
+  }
+}

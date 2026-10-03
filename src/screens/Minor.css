@@ -1,0 +1,144 @@
+.minor {
+  max-width: 820px;
+  gap: 20px;
+}
+
+.minor h1.display {
+  font-size: clamp(2.6rem, 11vw, 4.5rem);
+}
+
+/* Rules: a numbered bill of terms. The numbers carry the reading order. */
+.rules__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: rule;
+  border-top: 4px solid var(--rule);
+}
+
+.rules__list li {
+  counter-increment: rule;
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--ghost);
+  font-size: 1.05rem;
+  max-width: 70ch;
+}
+
+.rules__list li::before {
+  content: counter(rule);
+  font-family: var(--f-slab);
+  font-size: 1.6rem;
+  line-height: 1.05;
+  color: var(--red);
+}
+
+.rules__list li:nth-child(even)::before {
+  color: var(--blue);
+}
+
+/* History */
+.ledger__tally {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-block: 4px solid var(--rule);
+}
+
+.ledger__tally div {
+  display: grid;
+  justify-items: center;
+  padding: 10px 4px;
+}
+
+.ledger__tally div + div {
+  border-inline-start: 1px solid var(--ghost);
+}
+
+.ledger__tally .display {
+  font-size: clamp(2rem, 9vw, 3.2rem);
+}
+
+.ledger__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ledger__row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 4px 12px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 2px solid var(--rule);
+}
+
+.ledger__team {
+  display: grid;
+  min-width: 0;
+}
+
+.ledger__team .display {
+  font-size: 1.35rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ledger__team--blue {
+  text-align: end;
+}
+
+.ledger__team--red .display {
+  color: var(--red);
+}
+
+.ledger__team--blue .display {
+  color: var(--blue);
+}
+
+.ledger__score {
+  display: grid;
+  justify-items: center;
+  font-family: var(--f-display);
+  font-weight: 900;
+}
+
+.ledger__score .num:first-child {
+  font-size: 1.6rem;
+}
+
+.ledger__score small {
+  font-family: var(--f-body);
+  font-weight: 500;
+  color: var(--ink-2);
+}
+
+.ledger__meta {
+  grid-column: 1 / -1;
+  font-size: 0.85rem;
+  color: var(--ink-2);
+}
+
+.ledger__win {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}
+
+.ledger__empty {
+  padding: 40px 0;
+  text-align: center;
+  font-size: 1.15rem;
+  color: var(--ink-2);
+}
+
+/* Settings */
+.settings__group {
+  display: grid;
+  gap: 10px;
+  padding-block: 14px;
+  border-bottom: 1px solid var(--ghost);
+}
