@@ -98,7 +98,7 @@ export function HistoryScreen({ history, onClear, onBack }: { history: HistoryEn
                   </span>
                   <span className="ledger__meta">
                     {date.format(h.finishedAt)} · <span className="num">{h.formation}</span> ·{' '}
-                    {h.mode === 'ai' ? `${t('vsMachine')} (${t(h.difficulty as 'easy')})` : t('twoPlayer')}
+                    {h.mode === 'ai' ? `${t('vsMachine')} (${t(h.difficulty as 'easy')})` : h.mode === 'online' ? t('onlineMode') : t('twoPlayer')}
                   </span>
                 </li>
               );

@@ -11,7 +11,7 @@ interface Props {
   saved: GameState | null;
   lang: Lang;
   onLang: (l: Lang) => void;
-  onPlay: (mode: 'ai' | 'pvp') => void;
+  onPlay: (mode: 'ai' | 'pvp' | 'online') => void;
   onResume: () => void;
   onDiscard: () => void;
   onNavigate: (s: Screen) => void;
@@ -110,6 +110,10 @@ export function HomeScreen({ saved, lang, onLang, onPlay, onResume, onDiscard, o
         <button className="home__act home__act--blue" onClick={() => onPlay('pvp')}>
           <span className="display">{t('playPvp')}</span>
           <span className="home__note">{t('playPvpNote')}</span>
+        </button>
+        <button className="home__act home__act--ink" onClick={() => onPlay('online')}>
+          <span className="display">{t('playOnline')}</span>
+          <span className="home__note">{t('playOnlineNote')}</span>
         </button>
         <div className="home__minor">
           <button className="btn btn--sm" onClick={() => onNavigate('rules')}>

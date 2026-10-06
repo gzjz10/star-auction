@@ -26,6 +26,10 @@ interface Props {
   onToggleSound: () => void;
   onQuit: () => void;
   onFinish: () => void;
+  /** Online: the corner this device plays. Null on a shared device. */
+  seat?: TeamIdx | null;
+  /** Online: connection trouble to show above the table. */
+  notice?: string | null;
 }
 
 const corner = (t: TeamIdx) => (t === 0 ? 'red' : 'blue');
@@ -242,7 +246,7 @@ function Mystery({ game }: { game: GameState }) {
   );
 }
 
-function BidBand({ game, clock }: { game: GameState; clock: number | null }) {
+function BidBand({ game, clock, seat }: { game: GameState; clock: number | null; seat: TeamIdx | null }) {
   const { t } = useI18n();
   const { bid } = game;
   const holder = bid.holder;
@@ -270,7 +274,11 @@ function BidBand({ game, clock }: { game: GameState; clock: number | null }) {
       {game.phase === 'bidding' && (
         <div className={`fuse fuse--${corner(game.turn)}`}>
           <span className="fuse__who label">
-            {turnTeam.controller === 'ai' ? t('thinking', { team: turnTeam.name }) : t('turnOf', { team: turnTeam.name })}
+            {turnTeam.controller === 'ai'
+              ? t('thinking', { team: turnTeam.name })
+              : seat === game.turn
+                ? t('yourTurn')
+                : t('turnOf', { team: turnTeam.name })}
           </span>
           {clock !== null && total > 0 && (
             <>
@@ -292,11 +300,22 @@ function BidBand({ game, clock }: { game: GameState; clock: number | null }) {
   );
 }
 
-function Controls({ game, dispatch, onFinish }: { game: GameState; dispatch: (a: Action) => void; onFinish: () => void }) {
+function Controls({
+  game,
+  dispatch,
+  onFinish,
+  seat,
+}: {
+  game: GameState;
+  dispatch: (a: Action) => void;
+  onFinish: () => void;
+  seat: TeamIdx | null;
+}) {
   const { t } = useI18n();
   const nextRef = useRef<HTMLButtonElement>(null);
   const team = game.turn;
-  const human = game.teams[team].controller === 'human';
+  // Online, only the corner on this device may act; on a shared device any human corner can.
+  const human = game.teams[team].controller === 'human' && (seat === null || seat === team);
   const options = raiseOptions(game);
   const budget = game.teams[team].budget;
   const affordable = minBid(game) <= budget;
@@ -436,12 +455,12 @@ function SquadSheet({ game, team }: { game: GameState; team: TeamIdx }) {
 
 /* ---------- Screen ---------- */
 
-export function AuctionScreen({ game, dispatch, sound, onToggleSound, onQuit, onFinish }: Props) {
+export function AuctionScreen({ game, dispatch, sound, onToggleSound, onQuit, onFinish, seat = null, notice = null }: Props) {
   const { t } = useI18n();
   const clock = useTurnClock(game, dispatch);
   useAiTurn(game, dispatch);
   useCues(game);
-  const [tab, setTab] = useState<TeamIdx>(0);
+  const [tab, setTab] = useState<TeamIdx>(seat ?? 0);
   const rounds = totalRounds(game.config);
   const round = game.lot.slot + 1;
 
@@ -474,6 +493,11 @@ export function AuctionScreen({ game, dispatch, sound, onToggleSound, onQuit, on
         </button>
       </header>
 
+      {notice && (
+        <p className="link-notice" role="status">
+          {notice}
+        </p>
+      )}
       <BoutBand game={game} />
 
       <div className="auction__stage">
@@ -487,8 +511,8 @@ export function AuctionScreen({ game, dispatch, sound, onToggleSound, onQuit, on
             <Mystery game={game} />
           </div>
           <div className="auction__dock">
-            <BidBand game={game} clock={clock} />
-            <Controls game={game} dispatch={dispatch} onFinish={onFinish} />
+            <BidBand game={game} clock={clock} seat={seat} />
+            <Controls game={game} dispatch={dispatch} onFinish={onFinish} seat={seat} />
           </div>
         </main>
 

@@ -17,7 +17,7 @@ export interface Crest {
 }
 
 export interface GameConfig {
-  mode: 'ai' | 'pvp';
+  mode: 'ai' | 'pvp' | 'online';
   formation: FormationId;
   difficulty: Difficulty;
   /** Seconds per turn, 0 = no timer. */

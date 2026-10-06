@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Vite + React + TypeScript, static build, no backend. Persistence in localStorage (versioned save). Hosted on Vercel from the public GitHub repo `gzjz10/star-auction` (auto-deploy on push to main).
+Vite + React + TypeScript, static build, no backend (online play is WebRTC peer-to-peer via the public PeerJS broker). Persistence in localStorage (versioned save). Hosted on Vercel from the public GitHub repo `gzjz10/star-auction` (auto-deploy on push to main).
 
 ## Users
 
@@ -30,7 +30,7 @@ Every round pairs an open card you bid on with a face-down card the loser gets f
 
 ## Capabilities and Constraints
 
-- Modes: vs AI (four difficulties) and local two-player on one device.
+- Modes: vs AI (four difficulties), local two-player on one device, and online two-player (peer-to-peer, host-authoritative, room code or invite link).
 - Formations: 4-3-3, 4-4-2, 3-5-2, 4-2-3-1. Each slot is one auction round, and players are drawn strictly by position.
 - Each team gets a budget of €450M. Prices are in € millions, based on market value as of the 2026/27 season (data as of Oct 2026).
 - Scoring: player ratings + chemistry (club / nation / league links) + leftover cash. Each part can be toggled.

@@ -1,5 +1,5 @@
 import { hasPlayer } from '../data';
-import type { GameState } from './auction';
+import type { GameConfig, GameState } from './auction';
 import type { MatchResult } from './match';
 import type { ScoreBreakdown } from './scoring';
 
@@ -11,7 +11,7 @@ const HISTORY_LIMIT = 30;
 export interface HistoryEntry {
   id: string;
   finishedAt: number;
-  mode: 'ai' | 'pvp';
+  mode: GameConfig['mode'];
   formation: string;
   difficulty: string;
   names: [string, string];
@@ -56,7 +56,7 @@ function remove(key: string): void {
 }
 
 /** A save is only usable if it is our version and every player still exists in the database. */
-function isUsableSave(s: GameState | null): s is GameState {
+export function isUsableSave(s: GameState | null): s is GameState {
   if (!s || s.version !== 1 || !s.lot || !Array.isArray(s.teams)) return false;
   const ids = [s.lot.openId, s.lot.hiddenId, ...s.teams.flatMap((t) => t.picks.map((p) => p.playerId))];
   return ids.every(hasPlayer);

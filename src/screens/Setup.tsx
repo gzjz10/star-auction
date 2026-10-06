@@ -20,7 +20,7 @@ interface Remembered {
   crests: [CrestSpec, CrestSpec];
 }
 
-function loadRemembered(): Partial<Remembered> {
+export function loadRemembered(): Partial<Remembered> {
   try {
     return JSON.parse(localStorage.getItem(SETUP_KEY) ?? '{}') as Partial<Remembered>;
   } catch {
@@ -30,7 +30,7 @@ function loadRemembered(): Partial<Remembered> {
 
 const DIFFICULTIES: Difficulty[] = ['easy', 'normal', 'hard', 'legend'];
 
-function CrestPicker({ team, crest, onChange }: { team: TeamIdx; crest: CrestSpec; onChange: (c: CrestSpec) => void }) {
+export function CrestPicker({ team, crest, onChange }: { team: TeamIdx; crest: CrestSpec; onChange: (c: CrestSpec) => void }) {
   const { t } = useI18n();
   return (
     <div className="crest-picker">
@@ -90,7 +90,7 @@ export function SetupScreen({
   const [cash, setCash] = useState(mem.cash ?? true);
   const [names, setNames] = useState<[string, string]>(() => [
     mem.names?.[0] || t('defaultRed'),
-    mode === 'ai' ? t('defaultAi') : mem.names?.[1] || t('defaultBlue'),
+    mode === 'ai' ? t('defaultAi') : mode === 'online' ? '' : mem.names?.[1] || t('defaultBlue'),
   ]);
   const [crests, setCrests] = useState<[CrestSpec, CrestSpec]>(
     mem.crests ?? [
@@ -100,7 +100,8 @@ export function SetupScreen({
   );
   const [error, setError] = useState<TeamIdx | null>(null);
 
-  const corners: TeamIdx[] = mode === 'ai' ? [0] : [0, 1];
+  const solo = mode !== 'pvp';
+  const corners: TeamIdx[] = solo ? [0] : [0, 1];
 
   const submit = (e: FormEvent) => {
     e.preventDefault();
@@ -113,7 +114,7 @@ export function SetupScreen({
     }
     const remembered: Remembered = { formation, difficulty, timer, chemistry, cash, names: trimmed, crests };
     try {
-      localStorage.setItem(SETUP_KEY, JSON.stringify({ ...remembered, names: mode === 'ai' ? [trimmed[0], mem.names?.[1] ?? ''] : trimmed }));
+      localStorage.setItem(SETUP_KEY, JSON.stringify({ ...remembered, names: solo ? [trimmed[0], mem.names?.[1] ?? ''] : trimmed }));
     } catch {
       // not fatal
     }
@@ -169,6 +170,15 @@ export function SetupScreen({
             <CrestPicker team={c} crest={crests[c]} onChange={(cr) => setCrests((cs) => (c === 0 ? [cr, cs[1]] : [cs[0], cr]))} />
           </section>
         ))}
+
+        {mode === 'online' && (
+          <section className="setup__corner setup__corner--blue" aria-labelledby="corner-1">
+            <h2 id="corner-1" className="setup__corner-title display">
+              <Star className="star" /> {t('blueCorner')}
+            </h2>
+            <p className="muted">{t('onlineBlueNote')}</p>
+          </section>
+        )}
 
         {mode === 'ai' && (
           <section className="setup__corner setup__corner--blue" aria-labelledby="difficulty-title">
@@ -252,7 +262,7 @@ export function SetupScreen({
 
       <div className="setup__go">
         <button type="submit" className="btn btn--solid btn--red btn--lg">
-          {t('start')}
+          {mode === 'online' ? t('openRoom') : t('start')}
         </button>
       </div>
     </form>

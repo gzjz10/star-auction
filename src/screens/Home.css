@@ -171,6 +171,15 @@
   font-size: clamp(1.9rem, 7vw, 3rem);
 }
 
+.home__act--ink {
+  --act-ink: var(--ink);
+  background: transparent;
+  background-image: none;
+  color: var(--ink);
+  border-style: double;
+  border-width: 6px;
+}
+
 .home__act--blue {
   --act-ink: var(--blue);
   background: transparent;
@@ -233,7 +242,8 @@
   .home__menu {
     grid-template-columns: 1fr 1fr;
   }
-  .home__minor {
+  .home__minor,
+  .home__act--ink {
     grid-column: 1 / -1;
   }
 }

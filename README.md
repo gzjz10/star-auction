@@ -4,7 +4,7 @@
 
 لعبة مزاد كرة قدم بين ركنين، الأحمر والأزرق. كل ركن يبدأ بميزانية €450M ويبني تشكيلة أساسية مركزاً مركزاً. في كل جولة هناك بطاقة مكشوفة تزايدون عليها، وبطاقة مخفية تذهب **مجاناً للخاسر**. لذلك الفوز بالمزايدة ليس دائماً فوزاً بالجولة.
 
-- **أنماط اللعب:** ضد الكمبيوتر (أربعة مستويات: مبتدئ، كشّاف، مدير رياضي، أسطورة)، أو لاعبان على جهاز واحد.
+- **أنماط اللعب:** ضد الكمبيوتر (أربعة مستويات: مبتدئ، كشّاف، مدير رياضي، أسطورة)، أو لاعبان على جهاز واحد، أو **أونلاين**: كل لاعب من جواله برمز غرفة من خمسة أحرف أو رابط دعوة.
 - **الخطط:** 4-3-3 و4-4-2 و3-5-2 و4-2-3-1. لا يُسحب لاعب إلا لمركز يلعب فيه فعلاً.
 - **النقاط:** مجموع التقييمات، ثم انسجام النادي والمنتخب والدوري، ثم المال المتبقي. يمكن تفعيل كل عنصر أو إيقافه.
 - **المباراة:** محاكاة دقيقة بدقيقة من قوة الهجوم والوسط والدفاع والحارس، وبلا نتائج مكتوبة مسبقاً.
@@ -16,7 +16,7 @@
 
 A two-corner football draft auction. Red and blue each start with €450M and build a starting XI one position at a time. Every round has an open card you bid on and a face-down card that goes **free to the loser**, so winning the bid isn't always winning the round.
 
-- **Modes:** vs the computer (four difficulty levels) or two players on one device.
+- **Modes:** vs the computer (four difficulty levels), two players on one device, or **online**: each player on their own phone, joined by a five-letter room code or an invite link.
 - **Formations:** 4-3-3, 4-4-2, 3-5-2, 4-2-3-1. Players are only drawn for positions they actually play.
 - **Scoring:** player ratings + club / nation / league chemistry + leftover cash. Each part can be toggled.
 - **Match:** a minute-by-minute simulation driven by each XI's attack, midfield, defence and keeper. Nothing is scripted.
@@ -34,6 +34,10 @@ npm run build    # typecheck + production build
 ```
 
 **Stack:** Vite, React and TypeScript. There is no backend; persistence is `localStorage`.
+
+**Online play** (`src/online/`) is peer-to-peer over WebRTC. The free public PeerJS broker only introduces the two browsers, so there are no servers or keys to run. The host (red corner) runs the engine and sends the full state after every accepted action. The guest (blue corner) only sends actions, which the host validates (`protocol.ts`). A guest who reloads can rejoin with the same code and gets their corner back. If the host closes the page, the room ends.
+
+The defaults are Google STUN servers only. Some mobile carriers block direct links. To relay through a TURN server, set `VITE_ICE_SERVERS` at build time to a JSON array of `RTCIceServer` objects.
 
 **Code layout:**
 - Game rules live in `src/engine/` as pure functions with tests.

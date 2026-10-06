@@ -1,0 +1,146 @@
+.online {
+  gap: 22px;
+}
+
+.online__choices {
+  display: grid;
+  gap: 28px;
+  align-items: start;
+}
+
+@media (min-width: 820px) {
+  .online__choices {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.online__card {
+  --corner: var(--red);
+  display: grid;
+  gap: 14px;
+  align-content: start;
+  border-top: 6px solid var(--corner);
+  padding-top: 12px;
+}
+
+.online__card--blue {
+  --corner: var(--blue);
+}
+
+.online__card h2 {
+  color: var(--corner);
+  font-size: 1.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.online__card > .btn {
+  justify-self: start;
+}
+
+.online__code {
+  width: 100%;
+  max-width: 12ch;
+  min-height: 60px;
+  padding: 0.05em 0.3em;
+  border: 3px solid var(--corner);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--corner);
+  font-size: 2.4rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.online__code::placeholder {
+  color: var(--ink-3);
+  opacity: 0.45;
+}
+
+.online__state {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  text-align: center;
+  padding-block: 4vh;
+}
+
+.ticket {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  width: min(100%, 520px);
+  padding: 22px 18px;
+  border: 3px solid var(--ink);
+  outline: 1.5px solid var(--ink);
+  outline-offset: -8px;
+}
+
+.ticket__code {
+  font-size: clamp(3.4rem, 17vw, 6rem);
+  line-height: 1;
+  letter-spacing: 0.12em;
+  color: var(--red);
+  padding-inline-start: 0.12em;
+}
+
+.ticket__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.ticket__link {
+  font-size: 0.8125rem;
+  overflow-wrap: anywhere;
+}
+
+.online__wait {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.online__pulse {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--red);
+  animation: online-pulse 1.4s var(--ease-out) infinite;
+}
+
+.online__pulse--blue {
+  background: var(--blue);
+}
+
+@keyframes online-pulse {
+  50% {
+    opacity: 0.35;
+    transform: scale(0.8);
+  }
+}
+
+.online__problem {
+  max-width: 34ch;
+  font-size: 1.35rem;
+  line-height: 1.4;
+}
+
+/* Connection notice on the auction table. */
+.link-notice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  background: var(--ink);
+  background-image: var(--mottle);
+  background-size: 260px;
+  color: var(--on-ink);
+  font-weight: 600;
+  text-align: center;
+}
