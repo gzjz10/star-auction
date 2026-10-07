@@ -19,7 +19,7 @@ export type Position =
   | 'RW'
   | 'ST';
 
-export type LeagueCode = 'EPL' | 'LIGA' | 'SA' | 'BL' | 'L1' | 'SPL' | 'EGY' | 'TSL' | 'POR' | 'MLS' | 'OTHER';
+export type LeagueCode = 'EPL' | 'LIGA' | 'SA' | 'BL' | 'L1' | 'TSL' | 'POR' | 'ERE' | 'MLS';
 
 export interface League {
   code: LeagueCode;

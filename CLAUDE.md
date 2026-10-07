@@ -21,7 +21,7 @@ On this PC, Node is not on PATH in tool shells. Prefix commands with `export PAT
 ## Architecture
 
 - `src/engine/` holds the pure game logic and is fully tested. `auction.ts` is a reducer (`reduce(state, action)`). Every accepted action bumps `seq`, and any action carrying a stale `seq` is ignored. `rules.ts` holds every number the game uses, and the How to play page is generated from it. Draws and the match are seeded, so a given seed always plays out the same.
-- `src/data/` is the 200-player database, with `DATA_AS_OF` set to 2026-10. Values are partly best guesses, so re-check them when updating.
+- `src/data/` is the player database (about 320 players, European and US clubs only), with `DATA_AS_OF` set to 2026-10. Values are partly best guesses, so re-check them when updating.
 - `src/screens/` has one component per screen. `App.tsx` owns `game` state, routing between screens, autosave and history.
 - `src/online/` is online play:
   - It is peer-to-peer over WebRTC. The public PeerJS broker only introduces the two browsers, so there is no backend.

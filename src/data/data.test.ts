@@ -34,7 +34,7 @@ describe('player database', () => {
   it('has a data stamp and a sane size', () => {
     expect(DATA_AS_OF).toMatch(/^\d{4}-\d{2}$/);
     expect(PLAYERS.length).toBeGreaterThanOrEqual(180);
-    expect(PLAYERS.length).toBeLessThanOrEqual(200);
+    expect(PLAYERS.length).toBeLessThanOrEqual(350);
   });
 
   it('has unique, kebab-case ids', () => {
