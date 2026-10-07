@@ -1,0 +1,110 @@
+:root {
+  --stock: #efe3c8;
+  --stock-2: #e5d6b4;
+  --ink: #171512;
+  --ink-2: #4a443b;
+  --red: #b3261e;
+  --blue: #1f3b73;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --stock: #15120e;
+    --stock-2: #1f1b15;
+    --ink: #efe3c8;
+    --ink-2: #c4b89f;
+    --red: #e5533f;
+    --blue: #7a9ce8;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--stock);
+  color: var(--ink);
+  font: 17px/1.7 'Changa', 'Segoe UI', Tahoma, system-ui, sans-serif;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  border-bottom: 3px double var(--ink);
+  padding-bottom: 12px;
+  margin-bottom: 8px;
+}
+
+.top a {
+  color: var(--ink-2);
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--red) !important;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+}
+
+h1 {
+  color: var(--red);
+  font-size: clamp(1.8rem, 6vw, 2.4rem);
+  margin: 24px 0 8px;
+}
+
+h2 {
+  color: var(--blue);
+  margin-top: 32px;
+}
+
+section + section {
+  margin-top: 48px;
+  border-top: 1px solid var(--ink-2);
+}
+
+a {
+  color: var(--blue);
+  text-underline-offset: 3px;
+}
+
+.play {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 22px;
+  background: var(--red);
+  color: var(--stock);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+.note {
+  color: var(--ink-2);
+  font-size: 0.9rem;
+}
+
+footer {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 3px double var(--ink);
+  color: var(--ink-2);
+  font-size: 0.85rem;
+}

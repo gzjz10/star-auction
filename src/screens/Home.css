@@ -238,6 +238,31 @@
   margin: 0;
 }
 
+.home__foot {
+  text-align: center;
+  padding-top: 6px;
+}
+
+.home__links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+}
+
+.home__links a {
+  color: var(--ink-2);
+  text-underline-offset: 3px;
+  padding: 6px 2px;
+}
+
+.home__disclaimer {
+  font-size: 0.75rem;
+  max-width: 52ch;
+  margin: 6px auto 0;
+  line-height: 1.5;
+}
+
 @media (min-width: 760px) {
   .home__menu {
     grid-template-columns: 1fr 1fr;

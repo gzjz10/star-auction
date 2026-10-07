@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { DATA_AS_OF, PLAYERS } from '../data';
 import { totalRounds, type GameState } from '../engine/auction';
 import { Book, Gear, Hand, Ledger, Star } from '../components/Icons';
+import { AdSlot } from '../components/AdSlot';
 import { Crest } from '../components/Crest';
 import { useI18n, type Lang } from '../i18n';
 import type { Screen } from '../App';
@@ -138,6 +139,17 @@ export function HomeScreen({ saved, lang, onLang, onPlay, onResume, onDiscard, o
         </ol>
         <p className="home__asof muted">{t('dataAsOf', { date: asOfLabel(lang) })}</p>
       </section>
+
+      <AdSlot place="home" />
+
+      <footer className="home__foot">
+        <nav className="home__links" aria-label={t('footerAbout')}>
+          <a href={`/guide.html${lang === 'en' ? '#en' : ''}`}>{t('footerGuide')}</a>
+          <a href={`/about.html${lang === 'en' ? '#en' : ''}`}>{t('footerAbout')}</a>
+          <a href={`/privacy.html${lang === 'en' ? '#en' : ''}`}>{t('footerPrivacy')}</a>
+        </nav>
+        <p className="home__disclaimer muted">{t('disclaimer')}</p>
+      </footer>
     </div>
   );
 }

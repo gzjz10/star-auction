@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://star-auction.vercel.app/sitemap.xml

@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { AdSlot } from '../components/AdSlot';
 import { Crest } from '../components/Crest';
 import { FitText } from '../components/FitText';
 import { Star } from '../components/Icons';
@@ -141,6 +142,8 @@ export function ResultsScreen({ game, onMatch, onReplay, onRematch, onMenu }: Pr
           </button>
         </div>
       </nav>
+
+      <AdSlot place="results" />
     </div>
   );
 }

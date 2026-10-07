@@ -1,0 +1,14 @@
+.ad-slot {
+  display: grid;
+  gap: 4px;
+  /* Reserve room so the page does not jump when the ad arrives. */
+  min-height: 120px;
+  margin-block: 8px;
+}
+
+.ad-slot__label {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}

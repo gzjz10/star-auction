@@ -2,6 +2,11 @@ const en = {
   appName: 'Star Auction',
   tagline: 'Two corners. One budget. Eleven bouts for a starting XI.',
   dataAsOf: 'Squads & market values as of {date}',
+  disclaimer:
+    'Unofficial fan game. Not affiliated with, or endorsed by, any player, club, league or federation. Ratings and market values are estimates.',
+  footerGuide: 'Guide',
+  footerAbout: 'About',
+  footerPrivacy: 'Privacy',
 
   // Home
   playAi: 'Play the machine',
@@ -200,6 +205,11 @@ const ar: Dict = {
   appName: 'مزاد النجوم',
   tagline: 'ركنان. ميزانية واحدة. أحد عشر نزالاً لتشكيلة أساسية.',
   dataAsOf: 'التشكيلات والقيم السوقية حتى {date}',
+  disclaimer:
+    'لعبة غير رسمية من صنع المشجعين، لا ترتبط بأي لاعب أو نادٍ أو دوري أو اتحاد ولا تحظى بدعمهم. التقييمات والقيم السوقية تقديرية.',
+  footerGuide: 'الدليل',
+  footerAbout: 'عن اللعبة',
+  footerPrivacy: 'الخصوصية',
 
   playAi: 'العب ضد الكمبيوتر',
   playAiNote: 'أنت ضد الآلة، بأربعة مستويات من الجرأة',
